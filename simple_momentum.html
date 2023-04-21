@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/background.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/main-frame.css">
+    <link rel="stylesheet" href="/style/toDo-list.css">
+    <link rel="stylesheet" href="style/addons-calculator.css">
+    <link rel="stylesheet" href="/style/addon-container.css">
+    <!-- <link rel="stylesheet" href="style/addons-stopWatch.css"> -->
+    <title>Simple Momentum</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Noto+Sans+KR&display=swap');
+    .hidden {display: none !important;}</style>
+</head>
+<body>
+    <!-- 로그인 -->
+    <form class="hidden" id="login-form">
+        <h1 class="login-greeting">hello!</h1>
+        <input autofocus required maxlength="10" type="text" placeholder="Tell me your name"/>
+    </form>
+    
+    <div name="container">
+        <!-- 할 일 목록 -->
+        <form id="todo">
+            <div title="ToDo">To Do List</div>
+            <ul id="todo-ul"></ul>
+            <input type="text" id="todo-insert" required />
+        </form>
+        
+        <div name="center">
+            <!-- 인사말 -->
+            <h1 id="greeting"></h1>
+            
+            <!-- 시계 -->
+            <h2 id="clock">00:00</h2>
+            
+            <!-- 날씨 정보 -->
+            <div id="weather">
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- 인용문 -->
+            <div id="quote">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    
+        <!-- 부가 기능 탭 -->
+        <div id="addons">
+            <ul id="addons-mark"></ul>
+            <div id="addons-calculator">
+                <div class="calculator_head">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <button class="calculator_keypad" value="AC">AC</button>
+                <button class="calculator_keypad" value="CE">CE</button>
+                <button class="calculator_keypad number" value="7">7</button>
+                <button class="calculator_keypad number" value="8">8</button>
+                <button class="calculator_keypad number" value="9">9</button>
+                <button class="calculator_keypad operator" value="/">÷</button>
+                <button class="calculator_keypad number" value="4">4</button>
+                <button class="calculator_keypad number" value="5">5</button>
+                <button class="calculator_keypad number" value="6">6</button>
+                <button class="calculator_keypad operator" value="*">×</button>
+                <button class="calculator_keypad number" value="1">1</button>
+                <button class="calculator_keypad number" value="2">2</button>
+                <button class="calculator_keypad number" value="3">3</button>
+                <button class="calculator_keypad operator" value="-">―</button>
+                <button class="calculator_keypad number" value="0">0</button>
+                <button class="calculator_keypad operator" value=".">.</button>
+                <button class="calculator_keypad" value="=">=</button>
+                <button class="calculator_keypad operator" value="+">＋</button>
+            </div>
+            <div id="addons-stopwatch">
+                <div class="stopwatch_panel">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+                <button class="stopwatch_startstop">START</button>
+                <button class="stopwatch_reset">RESET</button>
+            </div>
+            <div id="addons-minesweeper"></div>
+        </div>
+    </div>
+
+    <script src="script/login.js"></script>
+    <script src="script/clock.js"></script>
+    <script src="script/quotes.js"></script>
+    <script src="script/background.js"></script>
+    <script src="script/todo.js"></script>
+    <!-- <script src="script/weather.js"></script> -->
+    <!-- <script src="script/tab/calculator.js"></script> -->
+    <!-- <script src="script/tab/stopwatch.js"></script> -->
+</body>
+</html>

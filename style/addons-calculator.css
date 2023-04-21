@@ -1,0 +1,37 @@
+.calculator_head {
+    grid-column: 1 / span 4;
+}
+
+.calculator_head ul {
+    display: grid;
+    height: 100%;
+    min-height:fit-content;
+    grid-template-rows: 1fr 2fr;
+    text-align: right;
+    list-style: none;
+}
+
+[value="AC"] {
+    grid-column: 1 / span 2;
+}
+[value="CE"] {
+    grid-column: 3 / span 2;
+}
+/* .alculator_keypad {
+    grid-area: keypad;
+} */
+
+#addons-calculator {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    font-family: 'Alkatra', cursive;
+}
+
+#addons-calculator > * {
+    border: 1px solid black;
+    border-radius: 1rem;
+    font-family: 'Alkatra', cursive;
+}

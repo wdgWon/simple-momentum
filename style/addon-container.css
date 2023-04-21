@@ -1,0 +1,12 @@
+#addons {
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 1rem;
+    
+    transition: all 0.5s;
+}
+
+#addons:hover,
+#addons:focus-within {
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 0px 0px 0.8vw 0.8vw rgb(147, 213, 47);
+}
