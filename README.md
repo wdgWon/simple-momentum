@@ -1,1 +1,3 @@
-# simple-momentum
+# Simple Momentum
+
+project for study
