@@ -1,4 +1,4 @@
-const API_KEY = '8f93f7e0aad72d681df3d4d4e0b2d8c4';
+import {key as API_KEY} from '../weather-key.js'; 
 
 function geoOn(position) {
     const lat = position.coords.latitude;
