@@ -13,7 +13,7 @@
 #todo:hover,
 #todo:focus-within {
     background-color: rgba(255,255,255,0.8);
-    box-shadow: 0px 0px 0.8vw 0.8vw rgb(200, 200, 57);
+    box-shadow: 1rem 1rem 1px 1px  black;
 }
 
 #todo button {

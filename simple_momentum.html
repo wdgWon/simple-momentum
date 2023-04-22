@@ -52,7 +52,11 @@
     
         <!-- 부가 기능 탭 -->
         <div id="addons">
-            <ul id="addons-mark"></ul>
+            <div class="tab">
+                <label><input type="radio" name="tab" checked><div></div></label>
+
+                <label><input type="radio" name="tab"><div></div></label>
+            </div>
             <div id="addons-calculator">
                 <div class="calculator_head">
                     <ul>
@@ -88,7 +92,7 @@
                 <button class="stopwatch_startstop">START</button>
                 <button class="stopwatch_reset">RESET</button>
             </div>
-            <div id="addons-minesweeper"></div>
+            <!-- <div id="addons-minesweeper"></div> -->
         </div>
     </div>
 
@@ -98,6 +102,7 @@
     <script src="script/background.js"></script>
     <script src="script/todo.js"></script>
     <script type="module" src="script/weather.js"></script>
+    <script src="script/tab/addons-marker.js"></script>
     <!-- <script src="script/tab/calculator.js"></script> -->
     <!-- <script src="script/tab/stopwatch.js"></script> -->
 </body>
