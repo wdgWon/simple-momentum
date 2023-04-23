@@ -1,0 +1,32 @@
+.font-white {
+    color: white;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px black;
+}
+
+#weather {
+    font-size: 1.7rem;
+}
+
+#clock {
+    font-size: 7rem;
+    margin-block-end: 0;
+}
+
+#greeting {
+    font-size: 5rem;
+    margin-block-start: 0;
+    margin-block-end: 2rem;
+    border-bottom: 2px solid black;
+}
+
+#todo {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#quote {
+    font-size: 1.2rem;
+}
