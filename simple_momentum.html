@@ -28,9 +28,11 @@
     
     <div name="container">
         <!-- 날씨 정보 -->
-        <div class="font-white text-shadow" id="weather">
-            <span></span>
-            <span></span>
+        <div class="weather-layout">
+            <div class="font-white text-shadow" id="weather">
+                <span></span>
+                <span></span>
+            </div>
         </div>
 
         <div name="center">
@@ -41,9 +43,16 @@
         
             <!-- 할 일 목록 -->
             <form class="font-white text-shadow" id="todo">
-                <div title="ToDo">To Do</div>
-                <ul id="todo-ul"></ul>
-                <input type="text" id="todo-insert" required />
+                <div title="ToDo">
+                    <input type="checkbox" id="todo-hide"/>
+                    <label for="todo-hide">To Do</label>
+                </div>
+                <div class="todo-overflow">
+                    <div class="todo-board">
+                        <ul id="todo-ul"></ul>
+                        <input type="text" id="todo-insert" required />
+                    </div>
+                </div>
             </form>
         
 

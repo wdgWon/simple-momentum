@@ -1,6 +1,8 @@
 const toDoForm = document.querySelector('#todo');
 const toDOInput = document.querySelector('#todo-insert');
 const toDoUl = document.querySelector('#todo-ul');
+const toDoCheck = toDoForm.querySelector('#todo-hide');
+const toDoBoard = toDoForm.querySelector('.todo-board');
 let toDos = [];
 const TODOS_KEY = 'todos';
 const savedToDos = localStorage.getItem(TODOS_KEY);
@@ -9,6 +11,9 @@ if(savedToDos !== null) {
     toDos = JSON.parse(savedToDos);
     toDos.forEach(setToDo);
 }
+
+transBoard();
+toDoCheck.onclick = transBoard;
 
 toDoForm.addEventListener("submit", event => {
     event.preventDefault();
@@ -45,3 +50,10 @@ function deleteToDo(event) {
 function saveToDo() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos))
 }
+
+function transBoard() {
+    const currentHeight = toDos.length;
+    const transHeight = toDoCheck.checked ? 0 : 2*currentHeight+10;
+    toDoBoard.style.transform = `translateY(-${transHeight}rem)`;
+}
+

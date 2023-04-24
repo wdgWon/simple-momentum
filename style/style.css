@@ -16,6 +16,7 @@
 }
 
 #greeting {
+    font-family: 'Alkatra';
     font-size: 5rem;
     margin-block-start: 0;
     margin-block-end: 2rem;
@@ -23,8 +24,76 @@
 }
 
 #todo {
+    font-family: 'Alkatra';
     font-size: 2rem;
-    text-align: center;
+}
+
+[title="ToDo"] {
+    display: flex;
+    justify-content: center;
+}
+
+#todo-hide {
+    display: none;
+}
+
+#todo-hide ~ label {
+    display: flex;
+    flex-wrap: wrap;
+    width: 8rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+}
+
+#todo-hide ~ label::after {
+    display: block;
+    margin-left: 2rem;
+    content: '';
+    width:1px;
+    height: 1px;
+    border-bottom: 2px double rgba(0,0,0,0);
+    transition: all 0.4s;
+}
+
+#todo-hide ~ label:hover::after,
+#todo-hide:checked ~ label::after {
+    width: 6rem;
+    border-bottom: 2px double black;
+}
+
+#todo-hide ~ label::before{
+    content: '';
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background-image: url('../source/chevron_right_FILL0_wght400_GRAD0_opsz48.png');
+    background-position: center;
+    transition-duration: 510ms;
+    transition-timing-function: ease;
+}
+
+#todo-hide:checked ~ label::before {
+    transform: rotate(90deg);
+}
+
+#todo-ul {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    list-style: none;
+}
+
+.todo-overflow {
+    overflow: hidden;
+}
+
+.todo-board {
+    transition: all 0.5s;
+    /* transform: translateY(-15rem); */
+}
+
+.down {
+    transform: translateY(0rem);
 }
 
 #quote {
