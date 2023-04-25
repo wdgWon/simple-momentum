@@ -10,8 +10,10 @@
 }
 
 [name="center"] {
-    width: 100%;
+    /* width: 100%; */
+    max-width: fit-content;
     height: 90%;
+    align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
