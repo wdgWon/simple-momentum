@@ -2,15 +2,23 @@
     color: white;
 }
 
+.font-dongle {
+    font-family: 'Dongle', sans-serif;
+}
+
+.font-alkatra {
+    font-family: 'Alkatra', sans-serif;
+}
+
 .text-shadow {
     text-shadow: 2px 2px black;
 }
 
 .underline-transition {
     width:0px;
-    height: 1px;
-    border-bottom: 4px double white;
+    border-bottom: 3px solid black;
     border-radius: 3rem;
+    transform: translateY(-2rem);
     transition: all 0.4s;
 }
 
@@ -21,58 +29,68 @@
     cursor: pointer;
 }
 
+#weather:hover span {
+    font-size: 2rem;
+    border-radius: 0.6rem;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
 .weather-description {
+    font-family: 'Alkatra', sans-serif;
     display: flex;
-    width: 10rem;
     flex-direction: column;
-    align-items: center;
-    max-height: 5rem;
+    align-items: flex-end;
+    right: 60px;
+    width: 10rem;
+    max-height: 3rem;
     overflow-y: hidden;
 }
 
 .weather-description span {
+    border-top: 2px solid rgba(0,0,0,0);
+    border-bottom: 2px solid rgba(0,0,0,0);
     visibility: hidden;
     position: absolute;
+    display: inline-block;
     transition: all 0.2s;
-    top: 8vh;
+    transform: translateY(6vh);
 }
 
 .weather-description .appear {
     visibility: visible;
-    top: 4vh;
+    transform: translateY(0);
 }
 
 .weather-description .disappear {
-    top: -4vh;
-}
-
-
-.weather-description-city {
-
-}
-
-.weather-description-tmp {
-
-}
-
-.weather-description-krDiscription {
-
+    opacity: 0;
+    transform: translateY(-8vh);
 }
 
 #clock {
+    display: inline-block;
+    font-family: 'Alkatra',sans-serif;
     font-size: 7rem;
     margin-block-end: 0;
+    padding-bottom: 0rem;
     user-select: none;
     cursor: pointer;
+    transition: all 0.4s;
 }
 
 .meridiem > span {
     font-size: 4rem;
 }
 
+#clock:hover {
+    transform: scale(1.2);
+    text-shadow: 0.2rem 0.2rem black;
+}
+
 #clock:hover + .clock-underline {
     width: 20rem;
-    border-bottom: 4px double white;
+    border-bottom: 3px solid black;
+    box-shadow: 0 0 1rem 0.5rem white;
 }
 
 #greeting {
@@ -98,16 +116,20 @@
     display: none;
 }
 
-#todo-hide ~ label {
+#todo-hide + label {
     display: flex;
     flex-wrap: wrap;
-    width: 8rem;
+    width: 9rem;
     cursor: pointer;
     user-select: none;
     transition: all 0.2s;
 }
 
-#todo-hide ~ label::after {
+#todo-hide + label:hover {
+    transform: scale(1.1);
+}
+
+#todo-hide + label::after {
     display: block;
     margin-left: 2rem;
     content: '';
@@ -117,13 +139,13 @@
     transition: all 0.4s;
 }
 
-#todo-hide ~ label:hover::after,
-#todo-hide:checked ~ label::after {
+#todo-hide + label:hover::after,
+#todo-hide:checked + label::after {
     width: 6rem;
     border-bottom: 2px solid black;
 }
 
-#todo-hide ~ label::before{
+#todo-hide + label::before{
     content: '';
     display: inline-block;
     width: 3rem;
@@ -134,7 +156,7 @@
     transition-timing-function: ease;
 }
 
-#todo-hide:checked ~ label::before {
+#todo-hide:checked + label::before {
     transform: rotate(90deg);
 }
 
@@ -153,5 +175,24 @@
 }
 
 #quote {
+    display: flex;
+    flex-direction: column;
     font-size: 1.2rem;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+#quote span:first-child {
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+#quote span:last-child {
+    font-size: 1rem;
+}
+
+#quote:hover span:first-child {
+    transform: scale(1.1);
 }

@@ -10,8 +10,11 @@ const quotes = [
     '“Success is not final, failure is not fatal: it is the courage to continue that counts.” - Winston Churchill',
     '“I have not failed. I’ve just found 10,000 ways that won’t work.” - Thomas Edison'
 ]
-const quotes_el = document.querySelector("#quote span:first-child");
-const author_el = document.querySelector("#quote span:last-child");
+const quoteContainer = document.querySelector('#quote');
+const quotes_el = quoteContainer.querySelector("#quote span:first-child");
+const author_el = quoteContainer.querySelector("#quote span:last-child");
+
+quoteContainer.onclick = getQuoteAndAuthor;
 
 function getQuoteAndAuthor() {
     const temp_obj = [];
@@ -21,9 +24,9 @@ function getQuoteAndAuthor() {
         obj.author = quotes[i].split(" - ")[1];
         temp_obj.push({...obj});
     }
-    const todaysQuote = temp_obj[Math.floor(Math.random() * quotes.length)];
+    let todaysQuote = temp_obj[Math.floor(Math.random() * quotes.length)];
     quotes_el.innerText = todaysQuote.quote;
-    author_el.innerText = todaysQuote.author;
+    author_el.innerText = `- ${todaysQuote.author} -`;
 
 }
 

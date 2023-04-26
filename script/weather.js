@@ -1,13 +1,9 @@
 import {key as API_KEY} from '../weather-key.js'; 
-const description = document.querySelector('.weather-description');
+const weatherBlock = document.querySelector('#weather');
 const span = document.querySelectorAll('.weather-description span');
 let count = 0;
 
-description.onclick = () => {
-    // const span = document.createElement('span');
-    // span.innerText = '123';
-    // description.appendChild(span);
-    // span[count%3].classList.toggle('hidden');
+weatherBlock.onclick = () => {
     span[count%3].classList.add('disappear');
     span[(count+1)%3].classList.remove('hidden');
     setTimeout(() => span[(count+1)%3].classList.add('appear'), 100);
@@ -17,7 +13,7 @@ description.onclick = () => {
 function geoOn(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
     console.log(url);
     fetch(url).then(response => response.json())
     .then(data => {
@@ -26,17 +22,13 @@ function geoOn(position) {
         img.setAttribute('src',`https://openweathermap.org/img/wn/${iconData}.png`); //icon 뒤에 @x2 붙이면 이미지 크기 2배
 
         const cityData = data.name;
-        const tmpData = data.main.temp;
+        const tmpData = `${Number(data.main.temp).toFixed(1)}°C`;
         const descriptionData = data.weather[0].description;
         const dataArray = [cityData,tmpData,descriptionData];
-        // for(let i in span) {
-        //     console.log(span);
-        // }
         for(let i=0; i<span.length; i++) {
             span[i].innerText = dataArray[i];
             i ? span[i].classList.add('hidden') : span[i].classList.add('appear');
         }
-        // span.innerText = `${cityData}\n${data.main.temp}\n${data.weather[0].description}`;
     })
 }
 

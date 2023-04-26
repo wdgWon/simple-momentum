@@ -14,12 +14,17 @@
     <!-- <link rel="stylesheet" href="style/addon-container.css"> -->
     <!-- <link rel="stylesheet" href="style/addons-stopWatch.css"> -->
     <title>Simple Momentum</title>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Noto+Sans+KR&display=swap');
-    .hidden {display: none !important;}
-    [name="container"] {border: 1px solid red;}
-    [name="center"] {border: 1px solid brown; }</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Noto+Sans+KR&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+        .hidden {display: none !important;}
+    </style>
 </head>
 <body>
+    <!-- 배경화면 -->
+    <img name="cross-back1" alt="background"/>
+    <img name="cross-back2" alt="background"/>
+    
     <!-- 로그인 -->
     <form class="hidden" id="login-form">
         <h1 class="login-greeting">hello!</h1>
@@ -30,12 +35,12 @@
         <!-- 날씨 정보 -->
         <div class="weather-layout">
             <div class="font-white text-shadow" id="weather">
-                <img/>
                 <div class="weather-description">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+                <img/>
             </div>
         </div>
 
@@ -53,7 +58,7 @@
                     <label for="todo-hide">To Do</label>
                 </div>
                 <div class="todo-overflow">
-                    <div class="todo-board">
+                    <div class="todo-board font-dongle">
                         <ul id="todo-ul"></ul>
                         <input type="text" id="todo-insert" required />
                     </div>
@@ -67,7 +72,7 @@
         
         <!-- 인용문 -->
         <div class="font-white text-shadow" id="quote">
-            <span></span>
+            <span class="font-alkatra"></span>
             <span></span>
         </div>
         <!-- 부가 기능 탭 -->
