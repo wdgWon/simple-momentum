@@ -31,8 +31,9 @@ function setToDo(newTodo) {
     const span = document.createElement('span');
     const del_btn = document.createElement('button');
     li.id = newTodo.id;
-    span.innerText = newTodo.li;
-    del_btn.innerText = '🗑';
+    span.innerHTML += newTodo.li;
+    span.addEventListener("click",listStrikeThrough);
+    del_btn.innerText = '❌';
     del_btn.setAttribute('type','button');
     del_btn.addEventListener("click", deleteToDo);
     li.appendChild(span);
@@ -55,5 +56,9 @@ function transBoard() {
     const currentHeight = toDos.length;
     const transHeight = toDoCheck.checked ? 0 : 2*currentHeight+10;
     toDoBoard.style.transform = `translateY(-${transHeight}rem)`;
+}
+
+function listStrikeThrough(event) {
+    event.target.classList.toggle('strike-through');
 }
 
