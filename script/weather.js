@@ -14,12 +14,11 @@ function geoOn(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-    console.log(url);
     fetch(url).then(response => response.json())
     .then(data => {
         const img = document.querySelector('#weather img');
         const iconData = data.weather[0].icon;
-        img.setAttribute('src',`https://openweathermap.org/img/wn/${iconData}.png`); //icon 뒤에 @x2 붙이면 이미지 크기 2배
+        img.setAttribute('src',`https://openweathermap.org/img/wn/${iconData}@2x.png`); //icon 뒤에 @2x 붙이면 이미지 크기 2배
 
         const cityData = data.name;
         const tmpData = `${Number(data.main.temp).toFixed(1)}°C`;

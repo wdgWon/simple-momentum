@@ -16,15 +16,15 @@ body {
 }
 
 [name="cross-back1"] {
-  opacity: 1;
-}
-
-[name="cross-back2"] {
   opacity: 0;
 }
 
-.fade-in {
+[name="cross-back2"] {
   opacity: 1;
+}
+
+.fade-in {
+  opacity: 1 !important;
 }
 
 .fade-out {

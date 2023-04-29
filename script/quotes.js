@@ -14,22 +14,23 @@ const quoteContainer = document.querySelector('#quote');
 const quotes_el = quoteContainer.querySelector("#quote span:first-child");
 const author_el = quoteContainer.querySelector("#quote span:last-child");
 
+getQuoteAndAuthor();
 quoteContainer.onclick = getQuoteAndAuthor;
 
 function getQuoteAndAuthor() {
     const temp_obj = [];
+
     for(let i=0; i<quotes.length; i++){
         const obj = {};
         obj.quote = quotes[i].split(" - ")[0];
         obj.author = quotes[i].split(" - ")[1];
         temp_obj.push({...obj});
     }
+
     let todaysQuote = temp_obj[Math.floor(Math.random() * quotes.length)];
     quotes_el.innerText = todaysQuote.quote;
     author_el.innerText = `- ${todaysQuote.author} -`;
-
 }
 
-getQuoteAndAuthor();
 
 

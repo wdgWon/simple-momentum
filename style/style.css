@@ -31,6 +31,7 @@
 }
 
 #weather img {
+    margin-top: -2.5vh;
     transition: all 0.2s;
 }
 
@@ -103,12 +104,14 @@
 }
 
 #greeting {
+    position: fixed;
+    top:4vh;
     font-family: 'Alkatra';
     font-size: 5rem;
     margin-block-start: 0;
     margin-block-end: 2rem;
-    border-bottom: 2px solid black;
     user-select: none;
+    transition: all 0.5s;
 }
 
 #todo {
@@ -190,7 +193,17 @@
 #todo-ul span {
     position: relative;
     cursor: pointer;
-    transition: all 0.5s;
+    border: 0px;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+
+#todo-ul .strike-through:hover {
+    text-shadow: 1px 1px red;
+}
+
+#todo-ul span:hover {
+    text-shadow: 1px 1px yellowgreen;
 }
 
 #todo-ul span::before {
@@ -203,7 +216,7 @@
     transition: all 0.5s;
 }
 
-#todo-ul .strike-through{
+#todo-ul .strike-through {
     color: rgba(255,255,255, 0.7);
     text-shadow: none;
 }
@@ -241,7 +254,7 @@
 
 .todo-board input {
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin: auto 0.5rem 0.5rem;
     width: 12rem;
     background: rgba(255,255,255,0.3);
     border: 0;
