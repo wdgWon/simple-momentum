@@ -15,9 +15,10 @@ const loginObj = {
 
     setGreetingMessege() {
         const greeting_username = localStorage.getItem(USERNAME_KEY);
-        // this.setLoginForm(false);
         greeting.innerText = `Hello! ${greeting_username}`;
+        this.setLoginForm(false);
         setTimeout(() => container.classList.add('fade-in'), 500);
+        setTimeout(() => greeting.classList.add('fade-out'), 5000);
     },
 
     setLoginForm(a) {
@@ -41,7 +42,6 @@ const loginObj = {
 
             loginForm.addEventListener("submit", event => {
                 event.preventDefault();
-                loginInput.classList.remove('login-input-appear');
                 loginObj.storeUserName();
                 loginObj.setGreetingMessege();
             });
