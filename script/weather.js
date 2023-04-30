@@ -10,19 +10,10 @@ weatherBlock.onclick = () => {
 }
 
 function geoOn(position) {
-    const gcs = `?lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
-    console.log(gcs);
-    const url = `https://keys.wdgwon.workers.dev`;
-    const init = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(gcs)
-    }
-    const req = new Request(url, init)
+    const req = `?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
+    const url = `https://api.openweathermap.org/data/2.5/weather${req}&appid=1b05b24164b4b58d9bc7ed9d62b69313&units=metric`
 
-    fetch(req).then(response => response.json())
+    fetch(url).then(response => response.json())
     .then(data => {
         console.log(data);
         const img = document.querySelector('#weather img');
