@@ -1,4 +1,3 @@
-const API_KEY = weatherApi.key;
 const weatherBlock = document.querySelector('#weather');
 const span = document.querySelectorAll('.weather-description span');
 let count = 0;
@@ -11,11 +10,21 @@ weatherBlock.onclick = () => {
 }
 
 function geoOn(position) {
-    const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-    fetch(url).then(response => response.json())
+    const gcs = `?lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
+    console.log(gcs);
+    const url = `https://keys.wdgwon.workers.dev`;
+    const init = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(gcs)
+    }
+    const req = new Request(url, init)
+
+    fetch(req).then(response => response.json())
     .then(data => {
+        console.log(data);
         const img = document.querySelector('#weather img');
         const iconData = data.weather[0].icon;
         img.setAttribute('src',`https://openweathermap.org/img/wn/${iconData}@2x.png`); //icon 뒤에 @2x 붙이면 이미지 크기 2배
