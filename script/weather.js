@@ -1,4 +1,4 @@
-import {key as API_KEY} from '../weather-key.js'; 
+const API_KEY = weatherApi.key;
 const weatherBlock = document.querySelector('#weather');
 const span = document.querySelectorAll('.weather-description span');
 let count = 0;
